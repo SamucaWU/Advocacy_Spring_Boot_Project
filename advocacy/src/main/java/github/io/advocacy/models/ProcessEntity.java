@@ -1,61 +1,44 @@
 package github.io.advocacy.models;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity // Mapeia automaticamente para o db
 @Table(name="process_tb")
+@NoArgsConstructor
 public class ProcessEntity {
 
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
     private Long id;
 
-    @Column(name="numero")
-    @Getter
-    @Setter
+    @Column(name="numero",nullable = false)
     private String numero;
 
-    @Column(name="tipo")
-    @Getter
-    @Setter
+    @Column(name="tipo",nullable = false)
     private String tipo;
 
-    @Column(name="status")
-    @Getter
-    @Setter
+    @Column(name="status",nullable = false)
     private String status;
 
-    @Column(name="dataAbertura")
-    @Getter
-    @Setter
+    @Column(name="dataAbertura",nullable = false)
     private LocalDate dataAbertura;
 
 
     // Connection with ClientEntity
     @ManyToOne
     @JoinColumn(name = "client_id")
-    @Getter
-    @Setter
     private ClientEntity client;
 
     // Connection with LawyerEntity
     @ManyToOne
     @JoinColumn(name = "lawyer_id")
-    @Getter
-    @Setter
     private LawyerEntity lawyer;
 
     // Process 1 ---- N schedulings
     @OneToMany(mappedBy = "process")
-    @Getter
-    @Setter
     private List<SchedulingEntity> scheduling;
 }

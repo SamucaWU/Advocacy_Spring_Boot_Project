@@ -2,47 +2,34 @@ package github.io.advocacy.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="scheduling_db")
+@NoArgsConstructor
 public class SchedulingEntity {
 
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
-    @Setter
     private Long id;
 
-    @Column(name="dataHora")
-    @Getter
-    @Setter
+    @Column(name="dataHora",nullable = false)
     private LocalDateTime dataHora;
 
     @Size(max = 255)
     @Column(name="descricao")
-    @Getter
-    @Setter
     private String descricao;
 
-    @Column(name="status")
-    @Getter
-    @Setter
+    @Column(name="status",nullable = false)
     private String status;
 
     @ManyToOne
     @JoinColumn(name = "process_id")
-    @Getter
-    @Setter
     private ProcessEntity process;
 
     @ManyToOne
     @JoinColumn(name = "lawyer_id")
-    @Getter
-    @Setter
     private LawyerEntity lawyer;
 }

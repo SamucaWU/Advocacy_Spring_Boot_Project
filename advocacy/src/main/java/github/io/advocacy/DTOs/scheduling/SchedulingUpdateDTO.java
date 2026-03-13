@@ -1,10 +1,12 @@
 package github.io.advocacy.DTOs.scheduling;
 
+import jakarta.validation.constraints.NotBlank;
+
 import java.time.LocalDateTime;
 
 public record SchedulingUpdateDTO(
 
-        LocalDateTime dataHora,
+        @NotBlank(message = "Data e hora inválida") LocalDateTime dataHora,
         String descricao,
-        String status
+        @NotBlank(message = "Status inválido") String status
 ) {}
