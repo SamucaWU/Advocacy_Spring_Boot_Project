@@ -7,8 +7,8 @@ public record ProcessResponseDTO(
 
         Long id,
         String numero,
-        String tipo,
-        String status,
+        TypeProcess tipo,
+        StatusProcess status,
         LocalDate dataAbertura,
         ClientResponseDTO client,
         LawyerResponseDTO lawyer

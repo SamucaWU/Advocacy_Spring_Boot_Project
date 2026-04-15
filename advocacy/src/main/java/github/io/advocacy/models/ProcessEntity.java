@@ -1,5 +1,7 @@
 package github.io.advocacy.models;
 
+import github.io.advocacy.DTOs.process.StatusProcess;
+import github.io.advocacy.DTOs.process.TypeProcess;
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
@@ -19,10 +21,12 @@ public class ProcessEntity {
     private String numero;
 
     @Column(name="tipo",nullable = false)
-    private String tipo;
+    @Enumerated(EnumType.STRING) // Changed for enum version
+    private TypeProcess tipo;
 
     @Column(name="status",nullable = false)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private StatusProcess status; // Changed for enum version
 
     @Column(name="dataAbertura",nullable = false)
     private LocalDate dataAbertura;

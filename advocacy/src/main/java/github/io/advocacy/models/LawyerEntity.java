@@ -1,5 +1,6 @@
 package github.io.advocacy.models;
 
+import github.io.advocacy.DTOs.lawyer.LawyerSpeciality;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.NoArgsConstructor;
@@ -21,12 +22,13 @@ public class LawyerEntity {
     @Column(name="oab",nullable = false)
     private String OAB;
 
+    @Enumerated(EnumType.STRING)
     @Column(name="especialidade",nullable = false)
-    private String especialidade;
+    private LawyerSpeciality especialidade; //Changed for enum version
 
     @Email
-    @Column(name="email",unique = true,nullable = false)
-    private String email;
+    @Column(name="gmail",unique = true,nullable = false)
+    private String gmail;
 
     @Column(name="senha", nullable = false,length = 60)
     private String senha; // Added 13/03/26

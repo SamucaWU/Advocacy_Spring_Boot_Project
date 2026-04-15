@@ -12,11 +12,4 @@ public class ClientController {
 
     @Autowired
     private ClientRepository clientRepository;
-
-    public List<ClientCreateDTO> listClients(){
-        return clientRepository.findAll()
-                .stream()
-                .map(ClientCreateDTO::new)
-                .toList();
-    }
 }

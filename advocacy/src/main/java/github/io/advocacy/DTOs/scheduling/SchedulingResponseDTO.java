@@ -8,7 +8,7 @@ public record SchedulingResponseDTO(
         Long id,
         LocalDateTime dataHora,
         String descricao,
-        String status,
+        SchedulingStatus status,
         ProcessResponseDTO process,
         LawyerResponseDTO lawyer
 ) {

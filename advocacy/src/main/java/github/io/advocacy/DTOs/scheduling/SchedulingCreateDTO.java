@@ -1,14 +1,27 @@
 package github.io.advocacy.DTOs.scheduling;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 
 public record SchedulingCreateDTO(
 
-        @NotBlank(message = "Data e hora obrigatória") LocalDateTime dataHora,
+        @NotNull(message = "Data e hora obrigatória")
+        @Future(message = "Adicionar data e hora")
+        LocalDateTime dataHora,
+
+        @NotBlank
+        @Size(max=255)
         String descricao,
-        @NotBlank(message = "Status obrigatório") String status,
-        @NotNull(message = "ID de processo inválido") Long processId,
-        @NotNull(message = "ID de advogado inválido") Long lawyerId
+
+        @NotNull(message = "Status obrigatório")
+        SchedulingStatus status,
+
+        @NotNull(message = "ID de processo inválido")
+        Long processId,
+
+        @NotNull(message = "ID de advogado inválido")
+        Long lawyerId
 ) {}

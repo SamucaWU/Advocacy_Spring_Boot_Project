@@ -5,6 +5,6 @@ public record LawyerResponseDTO(
         Long id,
         String nome,
         String OAB,
-        String especialidade,
-        String email
+        LawyerSpeciality especialidade,
+        String gmail
 ) {}

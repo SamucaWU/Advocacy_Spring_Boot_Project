@@ -13,10 +13,10 @@ public class ClientEntity {
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id; // Id do cliente
+    private Long id; // Id do cliente
 
     @Column(name="nome",nullable = false)
-    private String name;
+    private String nome;
 
     @Column(name= "cpf",nullable = false)
     private String cpf;

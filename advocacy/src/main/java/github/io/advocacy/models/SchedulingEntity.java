@@ -1,5 +1,6 @@
 package github.io.advocacy.models;
 
+import github.io.advocacy.DTOs.scheduling.SchedulingStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.NoArgsConstructor;
@@ -23,7 +24,8 @@ public class SchedulingEntity {
     private String descricao;
 
     @Column(name="status",nullable = false)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private SchedulingStatus status; //Changed for enum version
 
     @ManyToOne
     @JoinColumn(name = "process_id")

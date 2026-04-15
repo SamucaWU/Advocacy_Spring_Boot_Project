@@ -5,7 +5,7 @@ public record ClientResponseDTO(
         Long id,
         String nome,
         String cpf,
-        String email,
+        String gmail,
         String telefone
 
 ) {}

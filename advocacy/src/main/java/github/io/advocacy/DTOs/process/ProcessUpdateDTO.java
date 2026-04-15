@@ -1,10 +1,10 @@
 package github.io.advocacy.DTOs.process;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record ProcessUpdateDTO(
 
-        @NotBlank(message = "Tipo inválido") String tipo,
-        @NotBlank(message = "Status inválido") String status
+        @NotNull(message = "Tipo inválido") TypeProcess tipo,
+        @NotNull(message = "Status inválido") StatusProcess status
 ) {
 }
