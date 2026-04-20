@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Advocacy Spring Boot Project.iml" filepath="$PROJECT_DIR$/.idea/Advocacy Spring Boot Project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/advocacy/advocacy.iml" filepath="$PROJECT_DIR$/advocacy/advocacy.iml" />
     </modules>
   </component>
 </project>
