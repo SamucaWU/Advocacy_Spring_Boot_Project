@@ -3,13 +3,19 @@ package github.io.advocacy.models;
 import github.io.advocacy.DTOs.process.StatusProcess;
 import github.io.advocacy.DTOs.process.TypeProcess;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.time.LocalDate;
 import java.util.List;
 
-@Entity // Mapeia automaticamente para o db
+@Entity
 @Table(name="process_tb")
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class ProcessEntity {
 
     @Id

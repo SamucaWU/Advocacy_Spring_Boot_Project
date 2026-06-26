@@ -3,12 +3,18 @@ package github.io.advocacy.models;
 import github.io.advocacy.DTOs.lawyer.LawyerSpeciality;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.List;
 
-@Entity // Mapeia automaticamente para o db
-@Table(name = "lawyer_tb") // tabela de Advogado
+@Entity
+@Table(name = "lawyer_tb")
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class LawyerEntity {
 
     @Id

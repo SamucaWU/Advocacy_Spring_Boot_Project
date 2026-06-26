@@ -2,12 +2,18 @@ package github.io.advocacy.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.util.List;
 
-@Entity // Mapeia automaticamente para o db
-@Table(name = "tb_client") // Tabela do cliente
+@Entity
+@Table(name = "tb_client")
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class ClientEntity {
 
     @Id

@@ -3,12 +3,18 @@ package github.io.advocacy.models;
 import github.io.advocacy.DTOs.scheduling.SchedulingStatus;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name="scheduling_db")
 @NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class SchedulingEntity {
 
     @Id
